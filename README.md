@@ -8,5 +8,5 @@ bash gen-test-certs.sh
 
 2. Launch the container using:
 ```
-docker-compose up -d
+docker compose up -d
 ```
