@@ -15,7 +15,7 @@ services:
     ports:
       - '6380:6379'
     volumes:
-      - ./tls:/opt/bitnami/redis/certs
+      - ./tests/tls:/opt/bitnami/redis/certs
       - 'redis_data:/bitnami/redis/data'
 
 volumes:
