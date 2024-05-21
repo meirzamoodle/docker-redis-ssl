@@ -3,7 +3,7 @@
 ## How to:
 1. Run the shell file to generate all TLS related files:
 ```
-bash gen-redis-certs.sh
+bash gen-test-certs.sh
 ```
 
 2. Launch the container using:
