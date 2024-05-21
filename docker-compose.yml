@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  redis:
+    image: docker.io/bitnami/redis:6.2
+    user: "${UID}:${GID}"
+    environment:
+      - ALLOW_EMPTY_PASSWORD=true
+      - REDIS_TLS_CERT_FILE=/opt/bitnami/redis/certs/redis.crt
+      - REDIS_TLS_KEY_FILE=/opt/bitnami/redis/certs/redis.key
+      - REDIS_TLS_CA_FILE=/opt/bitnami/redis/certs/ca.crt
+      - REDIS_TLS_ENABLED=yes
+      - REDIS_TLS_AUTH_CLIENTS=no
+      - REDIS_TLS_PORT_NUMBER=6379
+    ports:
+      - '6380:6379'
+    volumes:
+      - ./tls:/opt/bitnami/redis/certs
+      - 'redis_data:/bitnami/redis/data'
+
+volumes:
+  redis_data:
+    driver: local
